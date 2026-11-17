@@ -41,7 +41,7 @@ module.exports = merge(base, {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'Mattermost Desktop App',
+            title: 'BullNet',
             template: 'src/renderer/index.html',
             chunks: ['index'],
             filename: 'index.html',

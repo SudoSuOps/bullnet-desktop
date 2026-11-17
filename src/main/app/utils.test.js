@@ -107,7 +107,7 @@ describe('main/app/utils', () => {
         });
 
         it('should return url if deeplinking URL is valid', () => {
-            expect(getDeeplinkingURL(['mattermost', 'mattermost://server-1.com'])).toBe('mattermost://server-1.com');
+            expect(getDeeplinkingURL(['bullnet', 'bullnet://server-1.com'])).toBe('bullnet://server-1.com');
         });
     });
 

@@ -4,8 +4,6 @@
 
 import type {BuildConfig} from 'types/config';
 
-import {DEFAULT_ACADEMY_LINK, DEFAULT_HELP_LINK, DEFAULT_UPGRADE_LINK} from '../../common/constants';
-
 // For detailed guides, please refer to https://docs.mattermost.com/deployment/desktop-app-deployment.html
 
 /**
@@ -24,25 +22,32 @@ import {DEFAULT_ACADEMY_LINK, DEFAULT_HELP_LINK, DEFAULT_UPGRADE_LINK} from '../
  * @prop {[]} trustedEmbeddedMediaOrigins - Explicit origin pairs that may share media permissions for embedded content
  */
 const buildConfig: BuildConfig = {
-    defaultServers: [/*
-    {
-      name: 'example',
-      url: 'https://example.com'
-    }
-  */],
-    helpLink: DEFAULT_HELP_LINK,
-    academyLink: DEFAULT_ACADEMY_LINK,
-    upgradeLink: DEFAULT_UPGRADE_LINK,
-    enableServerManagement: true,
-    enableUpdateNotifications: true,
-    updateNotificationURL: 'https://releases.mattermost.com/desktop',
-    macAppStoreUpdateURL: 'macappstore://apps.apple.com/us/app/mattermost-desktop/id1614666244',
-    windowsStoreUpdateURL: 'ms-windows-store://pdp/?productid=XP8BR8MH3LPKLT',
-    linuxUpdateURL: 'https://docs.mattermost.com/deployment-guide/desktop/linux-desktop-install.html',
-    linuxGitHubReleaseURL: 'https://github.com/mattermost/desktop/releases/tag',
+
+    // BullNet: one office, locked. Users cannot add, edit or remove servers.
+    defaultServers: [
+        {
+            name: 'BullNet',
+            url: 'https://office.swarmandbee.ai',
+        },
+    ],
+
+    // Empty links hide the Mattermost-branded Help menu items; the server's own help link still applies.
+    helpLink: '',
+    academyLink: '',
+    upgradeLink: '',
+    enableServerManagement: false,
+
+    // Custom build: Mattermost's release feed would offer the stock app, so update checks are off.
+    // BullNet ships new versions itself.
+    enableUpdateNotifications: false,
+    updateNotificationURL: '',
+    macAppStoreUpdateURL: '',
+    windowsStoreUpdateURL: '',
+    linuxUpdateURL: '',
+    linuxGitHubReleaseURL: '',
     managedResources: ['trusted'],
     allowedProtocols: [
-        'mattermost',
+        'bullnet',
         'ftp',
         'mailto',
         'tel',

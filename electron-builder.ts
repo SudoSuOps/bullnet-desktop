@@ -19,7 +19,7 @@ function getMacVersions() {
 }
 
 const config = {
-    appId: 'Mattermost.Desktop',
+    appId: 'ai.bullnet.Desktop',
     artifactName: '${version}/${name}-${version}-${os}-${arch}.${ext}',
     directories: {
         buildResources: 'src/assets',
@@ -59,9 +59,9 @@ const config = {
     ],
     protocols: [
         {
-            name: 'Mattermost',
+            name: 'BullNet',
             schemes: [
-                'mattermost',
+                'bullnet',
             ],
         },
     ],
@@ -69,7 +69,7 @@ const config = {
     afterPack: 'scripts/afterpack.js',
     deb: {
         artifactName: '${version}/${name}_${version}-1_${arch}.${ext}',
-        synopsis: 'Mattermost Desktop App',
+        synopsis: 'BullNet - your private AI office',
         depends: [
             'libnotify4',
             'libxtst6',
@@ -93,8 +93,9 @@ const config = {
             'rpm',
             'flatpak',
         ],
-        appId: 'com.Mattermost.Desktop',
-        executableName: 'com.Mattermost.Desktop',
+        appId: 'ai.bullnet.Desktop',
+        executableName: 'ai.bullnet.Desktop',
+        icon: 'src/assets/linux/icons',
         desktop: {
             entry: {
                 StartupWMClass: pkg.desktopName,

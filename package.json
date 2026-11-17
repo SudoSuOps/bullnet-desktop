@@ -1,13 +1,13 @@
 {
-  "name": "mattermost-desktop",
-  "productName": "Mattermost",
+  "name": "bullnet-desktop",
+  "productName": "BullNet",
   "version": "6.4.0",
-  "description": "Mattermost",
+  "description": "BullNet - your private AI office",
   "main": "dist/index.js",
-  "author": "Mattermost, Inc. <feedback@mattermost.com>",
+  "author": "Swarm and Bee LLC <build@mrdefendable.com>",
   "license": "Apache-2.0",
-  "desktopName": "com.Mattermost.Desktop",
-  "homepage": "https://mattermost.com",
+  "desktopName": "ai.bullnet.Desktop",
+  "homepage": "https://bullnet.ai",
   "engines": {
     "node": ">=24.0.0"
   },
